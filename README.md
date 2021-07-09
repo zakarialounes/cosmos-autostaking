@@ -8,7 +8,7 @@ sudo apt install expect
 
 ### Clone this repository
 ```bash
-git clone https://github.com/zlounes/cosmos-autostaking.git && cd cosmos-autostaking
+git clone https://github.com/zlounes/cosmos-autostaking.git $HOME/cosmos-autostaking && cd cosmos-autostaking
 ```
 
 ### Configuration
@@ -32,7 +32,8 @@ nano .passwd
 
 Start
 ```bash
-screen -S autoDelegate ./auto_delegate.sh
+# More profiles availables in the /profiles folder
+screen -S autoDelegate ./$HOME/cosmos-autostaking/auto_delegate.sh -p .profile
 ```
 
 Stop
@@ -44,4 +45,23 @@ exit
 ### Watch logs
 ```bash
 tail -f auto_delegate.log
+```
+
+Create the file service
+```
+sudo tee /etc/systemd/system/cosmos-autostaking.service <<EOF
+Description=Cosmos Auto Staking
+After=network-online.target
+
+[Service]
+User=$USER
+WorkingDirectory=/home/$USER/cosmos-autostaking
+ExecStart=/home/$USER/cosmos-autostaking/auto_delegate.sh -p /home/$USER/cosmos-autostaking/.profile
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target
+EOF
 ```

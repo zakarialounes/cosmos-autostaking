@@ -1,0 +1,53 @@
+# Juno Keyring Backend ("test", "file", "os" or "memory")
+# Example: KEYRING_BACKEND="test"
+# You can reimport your wallet with desired backend-type
+# (`juno keys add JunoWalletName --recover --keyring-backend test`)
+KEYRING_BACKEND="test"
+
+# Juno Wallet Name (`juno keys list`)
+# Example: DELEGATOR_NAME="EZStaking"
+DELEGATOR_NAME=""
+
+# Juno Wallet Address (`juno keys show JunoWalletName -a`)
+# Example: DELEGATOR="juno164kcy3s0pqfall3r837n82l24alc6l36ky56ld"
+DELEGATOR=""
+
+# Juno Validator Address
+# Example: VALIDATOR="junovaloper164kcy3s0pqfall3r837n82l24alc6l36gfuw4l"
+VALIDATOR=""
+
+# Current Juno Chain ID
+CHAIN_ID="lucina"
+
+#########################################################
+# In case you customized the Juno Node configuration, #
+# you will want to edit this below parameters.          #
+#########################################################
+
+# The IP of your Juno Node
+NODE_IP="127.0.0.1"
+
+# The port of your Juno Node
+NODE_PORT="26657"
+
+# The home of your Juno Node
+NODE_HOME="/home/juno/.juno"
+
+# The path to your Juno binary
+# To get the full path to your emcli binary you can use `whereis emcli` and replace the below value by.
+BINARY="/home/juno/go/bin/junod"
+
+####################
+# MODIFY FOR TESTS #
+####################
+
+BALANCE_POSITION="2"
+DENOM="ujuno"
+GAS_PRICES="--fees 200000${DENOM}"
+
+##################
+# DO NOT MODIFY! #
+##################
+
+SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT}"
+DETAILS="${SDETAILS} --keyring-backend ${KEYRING_BACKEND}"

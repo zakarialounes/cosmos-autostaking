@@ -1,18 +1,35 @@
 #!/bin/bash
 
-source .profile
+usage() { echo "Usage: $0 [-p <string>]" 1>&2; exit 1; }
 
-echo "Last running: $(date)" > auto_delegate.log
-echo "Log: $(pwd)/auto_delegate.log"
+while getopts ":p:" option; do
+    case "${option}" in
+        p)
+            p=${OPTARG}
+            ;;
+        *)
+            usage
+            ;;
+    esac
+done
+shift $((OPTIND-1))
+if [[ -z "${p}" ]]; then
+    p="${PWD}/.profile"
+fi
+
+source ${p}
+
+echo "Last running: $(date)" > ${PWD}/auto_delegate.log
+echo "Log: ${PWD}/auto_delegate.log"
 
 while :
 do
     if [[ "$KEYRING_BACKEND" = "test" || "$KEYRING_BACKEND" = "memory" ]]; then
-        ./delegate.sh >> output.log
+        ${PWD}/delegate.sh >> ${PWD}/output.log
     else
-        ./delegate.exp $(cat .passwd) >> auto_delegate.log
+        ${PWD}/delegate.exp $(cat ${PWD}/.passwd) >> ${PWD}/auto_delegate.log
     fi
 
-    echo "------ SLEEP 30s ------" >> auto_delegate.log
+    echo "------ SLEEP 30s ------" >> ${PWD}/auto_delegate.log
     sleep 30
 done
