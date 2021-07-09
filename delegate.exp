@@ -1,0 +1,11 @@
+#!/usr/bin/expect
+
+set password [lindex $argv 0]
+
+spawn ./delegate.sh
+
+expect "Enter keyring passphrase:" { send "$password\r"; }
+
+expect "Enter keyring passphrase:" { send "$password\r"; }
+
+interact
