@@ -1,4 +1,4 @@
-# cosmos-autostaking
+# Cosmos Auto Staking
 
 ### Install dependencies
 
@@ -8,35 +8,31 @@ sudo apt install expect
 
 ### Clone this repository
 ```bash
-git clone https://github.com/zlounes/cosmos-autostaking.git $HOME/cosmos-autostaking && cd cosmos-autostaking
+git clone https://github.com/zlounes/cosmos-autostaking.git $HOME/cosmos-autostaking && cd $HOME/cosmos-autostaking
 ```
 
 ### Configuration
 
-Make files executable
+#### Make files executable
 ```bash
-sudo chmod +x *delegate*
+chmod +x $HOME/cosmos-autostaking/*delegate*
 ```
 
-Edit the .profile file and set the appropriate values
+#### Edit desired profile files, set the appropriate values
 ```bash
-nano .profile
-```
-
-Set password if needed
-```bash
-nano .passwd
+nano $HOME/cosmos-autostaking/.desmos_profile
+nano $HOME/cosmos-autostaking/.juno_profile
 ```
 
 ### Manage start&stop
 
-Start
+#### Start
 ```bash
 # More profiles availables in the /profiles folder
-screen -S autoDelegate ./$HOME/cosmos-autostaking/auto_delegate.sh -p .profile
+screen -S autoDelegate $HOME/cosmos-autostaking/auto_delegate.sh -p $HOME/cosmos-autostaking/profiles/.desmos_profile
 ```
 
-Stop
+#### Stop
 ```bash
 screen -R autoDelegate
 exit
@@ -44,10 +40,11 @@ exit
 
 ### Watch logs
 ```bash
-tail -f auto_delegate.log
+tail -f $HOME/cosmos-autostaking/auto_delegate.log
 ```
 
-Create the file service
+### Using Systemd Service
+
 ```
 sudo tee /etc/systemd/system/cosmos-autostaking.service <<EOF
 Description=Cosmos Auto Staking
@@ -56,7 +53,7 @@ After=network-online.target
 [Service]
 User=$USER
 WorkingDirectory=/home/$USER/cosmos-autostaking
-ExecStart=/home/$USER/cosmos-autostaking/auto_delegate.sh -p /home/$USER/cosmos-autostaking/.profile
+ExecStart=/home/$USER/cosmos-autostaking/auto_delegate.sh -p /home/$USER/cosmos-autostaking/profiles/.desmos_profile
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
@@ -64,4 +61,14 @@ LimitNOFILE=4096
 [Install]
 WantedBy=multi-user.target
 EOF
+```
+
+#### Start 
+```bash
+sudo systemctl enable --now cosmos-autostaking
+```
+
+#### Stop 
+```bash
+sudo systemctl stop cosmos-autostaking
 ```

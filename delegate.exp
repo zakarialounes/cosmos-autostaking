@@ -1,8 +1,9 @@
 #!/usr/bin/expect
 
-set password [lindex $argv 0]
+set path [lindex $argv 0]
+set password [lindex $argv 1]
 
-spawn ./delegate.sh
+spawn ./delegate.sh $path
 
 expect "Enter keyring passphrase:" { send "$password\r"; }
 

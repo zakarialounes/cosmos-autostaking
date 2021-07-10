@@ -4,6 +4,10 @@
 # (`desmos keys add DesmosWalletName --recover --keyring-backend test`)
 KEYRING_BACKEND="test"
 
+# Password
+# Required if keyring-backend is "file" or "os"
+PASSWD=""
+
 # Desmos Wallet Name (`desmos keys list`)
 # Example: DELEGATOR_NAME="EZStaking"
 DELEGATOR_NAME=""
@@ -17,7 +21,7 @@ DELEGATOR=""
 VALIDATOR=""
 
 # Current Desmos Chain ID
-CHAIN_ID="morpheus-apollo-1"
+CHAIN_ID="morpheus-apollo-2"
 
 #########################################################
 # In case you customized the Desmos Node configuration, #
@@ -34,16 +38,20 @@ NODE_PORT="26657"
 NODE_HOME="/home/desmos/.desmos"
 
 # The path to your Desmos binary
-# To get the full path to your emcli binary you can use `whereis emcli` and replace the below value by.
+# To get the full path to your desmos binary you can use `whereis desmos` and replace the below value by.
 BINARY="/home/desmos/go/bin/desmos"
+
+# Depending on Cosmos SDK version
+# - ACCOUNT     $binary query account
+# - BANK        $binary query bank balances
+BALANCES_FROM="BANK"
 
 ####################
 # MODIFY FOR TESTS #
 ####################
 
-BALANCE_POSITION="2"
 DENOM="udaric"
-GAS_PRICES="--fees 200000${DENOM}"
+GAS_PRICES="--gas auto --gas-adjustment 1.1 --gas-prices 0.001${DENOM}"
 
 ##################
 # DO NOT MODIFY! #

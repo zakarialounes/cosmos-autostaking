@@ -4,16 +4,20 @@
 # (`juno keys add JunoWalletName --recover --keyring-backend test`)
 KEYRING_BACKEND="test"
 
+# Password
+# Required if keyring-backend is "file" or "os"
+PASSWD=""
+
 # Juno Wallet Name (`juno keys list`)
 # Example: DELEGATOR_NAME="EZStaking"
 DELEGATOR_NAME=""
 
 # Juno Wallet Address (`juno keys show JunoWalletName -a`)
-# Example: DELEGATOR="juno164kcy3s0pqfall3r837n82l24alc6l36ky56ld"
+# Example: DELEGATOR="juno18wgy6hy6yv3fvevl5pyfn7cvzx3t5use43xlgs"
 DELEGATOR=""
 
 # Juno Validator Address
-# Example: VALIDATOR="junovaloper164kcy3s0pqfall3r837n82l24alc6l36gfuw4l"
+# Example: VALIDATOR="junovaloper18wgy6hy6yv3fvevl5pyfn7cvzx3t5use2vssnf"
 VALIDATOR=""
 
 # Current Juno Chain ID
@@ -34,14 +38,18 @@ NODE_PORT="26657"
 NODE_HOME="/home/juno/.juno"
 
 # The path to your Juno binary
-# To get the full path to your emcli binary you can use `whereis emcli` and replace the below value by.
+# To get the full path to your junod binary you can use `whereis junod` and replace the below value by.
 BINARY="/home/juno/go/bin/junod"
+
+# Depending on Cosmos SDK version
+# - ACCOUNT     $binary query account
+# - BANK        $binary query bank balances
+BALANCES_FROM="BANK"
 
 ####################
 # MODIFY FOR TESTS #
 ####################
 
-BALANCE_POSITION="2"
 DENOM="ujuno"
 GAS_PRICES="--fees 200000${DENOM}"
 
