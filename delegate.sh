@@ -46,5 +46,5 @@ delegateAction() {
 }
 
 withdrawRewardsAction
-sleep 5
+sleep 15
 delegateAction

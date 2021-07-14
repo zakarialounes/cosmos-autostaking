@@ -51,7 +51,7 @@ BALANCES_FROM="BANK"
 ####################
 
 DENOM="udaric"
-GAS_PRICES="--gas auto --gas-adjustment 1.1 --gas-prices 0.001${DENOM}"
+GAS_PRICES="--gas 200000 --gas-prices 0.001${DENOM}"
 
 ##################
 # DO NOT MODIFY! #

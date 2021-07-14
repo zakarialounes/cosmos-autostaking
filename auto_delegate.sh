@@ -32,9 +32,9 @@ echo "Log: ${LOG_PATH}"
 while :
 do
     if [[ "$KEYRING_BACKEND" = "test" || "$KEYRING_BACKEND" = "memory" ]]; then
-        ${PWD}/delegate.sh ${p} >> ${LOG_PATH}
+        ${PWD}/delegate.sh ${p} >> ${LOG_PATH} 2>&1
     else
-        ${PWD}/delegate.exp ${p} ${PASSWD} >> ${LOG_PATH}
+        ${PWD}/delegate.exp ${p} ${PASSWD} >> ${LOG_PATH} 2>&1
     fi
 
     echo "------ SLEEP 30s ------" >> ${LOG_PATH}
