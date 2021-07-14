@@ -2,13 +2,21 @@
 
 set path [lindex $argv 0]
 set password [lindex $argv 1]
+set txPasswdConfirmations [lindex $argv 2]
+set txPasswdPhrase [lindex $argv 3]
 
 spawn ./delegate.sh $path
 
-expect "Enter keyring passphrase:" { send "$password\r"; }
+for {set i 1} {$i<=$txPasswdConfirmations} {incr i} {
+    expect "$txPasswdPhrase" { send "$password\r"; }
+    sleep 1
+}
 
 sleep 15
 
-expect "Enter keyring passphrase:" { send "$password\r"; }
+for {set i 1} {$i<=$txPasswdConfirmations} {incr i} {
+    expect "$txPasswdPhrase" { send "$password\r"; }
+    sleep 1
+}
 
 interact

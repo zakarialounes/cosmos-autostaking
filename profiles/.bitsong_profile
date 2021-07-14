@@ -1,7 +1,7 @@
 # BitSong Keyring Backend ("test", "file", "os" or "memory")
-# Example: KEYRING_BACKEND="test"
 # You can reimport your wallet with desired backend-type
 # (`bitsongcli keys add BitSongWalletName --recover --keyring-backend test`)
+# Example: KEYRING_BACKEND="test"
 KEYRING_BACKEND="test"
 
 # Password
@@ -21,7 +21,7 @@ DELEGATOR=""
 VALIDATOR=""
 
 # Current BitSong Chain ID
-CHAIN_ID="bitSong-1"
+CHAIN_ID="bitsong-1"
 
 ##########################################################
 # In case you customized the BitSong Node configuration, #
@@ -39,7 +39,7 @@ NODE_HOME="/home/bitsong/.bitsongcli"
 
 # The path to your BitSong binary
 # To get the full path to your bitSong binary you can use `whereis bitsongcli` and replace the below value by.
-BINARY="/home/bitSong/go/bin/bitsongcli"
+BINARY="/home/bitsong/go/bin/bitsongcli"
 
 # Depending on Cosmos SDK version
 # - ACCOUNT     $binary query account
@@ -52,6 +52,11 @@ BALANCES_FROM="ACCOUNT"
 
 DENOM="ubtsg"
 GAS_PRICES="--fees 5000${DENOM}"
+
+# Depending on Cosmos SDK version
+# Required if keyring-backend is "file" or "os"
+# Example: TX_PASSWD_CONFIRMATIONS="2"
+TX_PASSWD_CONFIRMATIONS="2"
 
 ##################
 # DO NOT MODIFY! #

@@ -53,6 +53,11 @@ BALANCES_FROM="ACCOUNT"
 DENOM="uluna"
 GAS_PRICES="--fees 3122${DENOM} --gas auto"
 
+# Depending on Cosmos SDK version
+# Required if keyring-backend is "file" or "os"
+# Example: TX_PASSWD_CONFIRMATIONS="2"
+TX_PASSWD_CONFIRMATIONS="2"
+
 ##################
 # DO NOT MODIFY! #
 ##################

@@ -2,6 +2,14 @@
 
 source $1
 
+if [[ -z "$TX_PASSWD_CONFIRMATIONS" ]]; then
+    TX_PASSWD_CONFIRMATIONS=1
+fi
+
+if [[ -z "TX_PASSWD_PRHASE" ]]; then
+    TX_PASSWD_PRHASE="Enter keyring passphrase:"
+fi
+
 getBalancesFromAccount() {
     coins=$(${BINARY} query account ${DELEGATOR} -o json ${SDETAILS} | jq '.value.coins | to_entries')
     position=$(echo ${coins} | jq -r ".[] | select(.value.denom == \"${DENOM}\") | .key")
@@ -40,9 +48,12 @@ delegateAction() {
     echo "Amount to delegate: ${amountFinal}"
     if [[ ${amountFinal} -gt 0 ]]; then
         ${BINARY} tx staking delegate ${VALIDATOR} ${amountFinal}${DENOM} --from ${DELEGATOR_NAME} ${GAS_PRICES} ${DETAILS} -y
-    elif [[ "$KEYRING_BACKEND" = "os" || "$KEYRING_BACKEND" = "file" ]]; then
-        echo -n 'Enter keyring passphrase:'
-        read answer
+    elif [[ "$KEYRING_BACKEND" != "test" && "$KEYRING_BACKEND" != "memory" ]]; then
+        for (( i=1; i<=$TX_PASSWD_CONFIRMATIONS; i++ ))
+        do
+            echo -n "${TX_PASSWD_PRHASE}"
+            read answer
+        done
     fi
 }
 

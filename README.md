@@ -35,8 +35,8 @@ nano $HOME/cosmos-autostaking/profiles/.terra_profile
 ### Manage start&stop
 
 #### Start
+More profiles availables in the /profiles folder
 ```bash
-# More profiles availables in the /profiles folder
 screen -S autoDelegate $HOME/cosmos-autostaking/auto_delegate.sh -p $HOME/cosmos-autostaking/profiles/.desmos_profile
 ```
 
@@ -62,9 +62,6 @@ After=network-online.target
 User=$USER
 WorkingDirectory=/home/$USER/cosmos-autostaking
 ExecStart=/home/$USER/cosmos-autostaking/auto_delegate.sh -p /home/$USER/cosmos-autostaking/profiles/.desmos_profile
-Restart=on-failure
-RestartSec=3
-LimitNOFILE=4096
 
 [Install]
 WantedBy=multi-user.target
