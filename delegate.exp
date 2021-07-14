@@ -7,6 +7,8 @@ spawn ./delegate.sh $path
 
 expect "Enter keyring passphrase:" { send "$password\r"; }
 
+sleep 15
+
 expect "Enter keyring passphrase:" { send "$password\r"; }
 
 interact
