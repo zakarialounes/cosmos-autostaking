@@ -1,0 +1,61 @@
+# Osmosis Keyring Backend ("test", "file", "os" or "memory")
+# Example: KEYRING_BACKEND="test"
+# You can reimport your wallet with desired backend-type
+# (`osmosisd keys add OsmosisWalletName --recover --keyring-backend test`)
+KEYRING_BACKEND="test"
+
+# Password
+# Required if keyring-backend is "file" or "os"
+PASSWD=""
+
+# Osmosis Wallet Name (`osmosisd keys list`)
+# Example: DELEGATOR_NAME="EZStaking"
+DELEGATOR_NAME=""
+
+# Osmosis Wallet Address (`osmosisd keys show OsmosisWalletName -a`)
+# Example: DELEGATOR="osmo16vcwhpzd6hfsm5n0fxz9880lvkgjnpwyuhmmnv"
+DELEGATOR=""
+
+# Osmosis Validator Address
+# Example: VALIDATOR="osmovaloper16vcwhpzd6hfsm5n0fxz9880lvkgjnpwyxqncyt"
+VALIDATOR=""
+
+# Current Osmosis Chain ID
+CHAIN_ID="osmosis-1"
+
+##########################################################
+# In case you customized the Osmosis Node configuration, #
+# you will want to edit this below parameters.           #
+##########################################################
+
+# The IP of your Osmosis Node
+NODE_IP="127.0.0.1"
+
+# The port of your Osmosis Node
+NODE_PORT="26657"
+
+# The home of your Osmosis Node
+NODE_HOME="/home/osmosis/.osmosisd"
+
+# The path to your Osmosis binary
+# To get the full path to your osmosis binary you can use `whereis osmosisd` and replace the below value by.
+BINARY="/home/osmosis/go/bin/osmosisd"
+
+# Depending on Cosmos SDK version
+# - ACCOUNT     $binary query account
+# - BANK        $binary query bank balances
+BALANCES_FROM="BANK"
+
+####################
+# MODIFY FOR TESTS #
+####################
+
+DENOM="uosmo"
+GAS_PRICES=""
+
+##################
+# DO NOT MODIFY! #
+##################
+
+SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT}"
+DETAILS="${SDETAILS} --keyring-backend ${KEYRING_BACKEND}"
