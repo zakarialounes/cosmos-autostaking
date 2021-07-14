@@ -20,9 +20,16 @@ chmod +x $HOME/cosmos-autostaking/*delegate*
 
 #### Edit desired profile files, set the appropriate values
 ```bash
-nano $HOME/cosmos-autostaking/profiles/.osmosis_profile
+nano $HOME/cosmos-autostaking/profiles/.bitcanna_profile
+nano $HOME/cosmos-autostaking/profiles/.bitsong_profile
 nano $HOME/cosmos-autostaking/profiles/.desmos_profile
+nano $HOME/cosmos-autostaking/profiles/.emoney_profile
+nano $HOME/cosmos-autostaking/profiles/.irisnet_profile
 nano $HOME/cosmos-autostaking/profiles/.juno_profile
+nano $HOME/cosmos-autostaking/profiles/.kichain_profile
+nano $HOME/cosmos-autostaking/profiles/.osmosis_profile
+nano $HOME/cosmos-autostaking/profiles/.regen_profile
+nano $HOME/cosmos-autostaking/profiles/.terra_profile
 ```
 
 ### Manage start&stop

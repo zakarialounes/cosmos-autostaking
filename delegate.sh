@@ -27,6 +27,7 @@ getDelegateAmount () {
     amountFinal=$(expr ${1} - 100000)
     echo -n ${amountFinal}
 }
+
 withdrawRewardsAction() {
     echo "------ REWARDS ------"
     ${BINARY} tx distribution withdraw-rewards ${VALIDATOR} --from ${DELEGATOR_NAME} --commission ${GAS_PRICES} ${DETAILS} -y
