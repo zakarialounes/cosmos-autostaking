@@ -3,7 +3,7 @@
 ### Install dependencies
 
 ```bash
-sudo apt install expect
+sudo apt install expect -y
 ```
 
 ### Clone this repository
