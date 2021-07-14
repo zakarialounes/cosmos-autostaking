@@ -1,0 +1,61 @@
+# Terra Keyring Backend ("test", "file", "os" or "memory")
+# Example: KEYRING_BACKEND="test"
+# You can reimport your wallet with desired backend-type
+# (`terracli keys add TerraWalletName --recover --keyring-backend test`)
+KEYRING_BACKEND="test"
+
+# Password
+# Required if keyring-backend is "file" or "os"
+PASSWD=""
+
+# Terra Wallet Name (`terracli keys list`)
+# Example: DELEGATOR_NAME="EZStaking"
+DELEGATOR_NAME=""
+
+# Terra Wallet Address (`terracli keys show TerraWalletName -a`)
+# Example: DELEGATOR="terra1vv4y54wczzk99ga65uvy7555n5q68gswc5p3ze"
+DELEGATOR=""
+
+# Terra Validator Address
+# Example: VALIDATOR="terravaloper1vv4y54wczzk99ga65uvy7555n5q68gswcmdvj2"
+VALIDATOR=""
+
+# Current Terra Chain ID
+CHAIN_ID="columbus-4"
+
+##########################################################
+# In case you customized the Terra Node configuration, #
+# you will want to edit this below parameters.           #
+##########################################################
+
+# The IP of your Terra Node
+NODE_IP="127.0.0.1"
+
+# The port of your Terra Node
+NODE_PORT="26657"
+
+# The home of your Terra Node
+NODE_HOME="/home/terra/.terrad"
+
+# The path to your Terra binary
+# To get the full path to your terra binary you can use `whereis terracli` and replace the below value by.
+BINARY="/home/terra/go/bin/terracli"
+
+# Depending on Cosmos SDK version
+# - ACCOUNT     $binary query account
+# - BANK        $binary query bank balances
+BALANCES_FROM="ACCOUNT"
+
+####################
+# MODIFY FOR TESTS #
+####################
+
+DENOM="uluna"
+GAS_PRICES="--fees 3122${DENOM} --gas auto"
+
+##################
+# DO NOT MODIFY! #
+##################
+
+SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT}"
+DETAILS="${SDETAILS} --keyring-backend ${KEYRING_BACKEND}"

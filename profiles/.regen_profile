@@ -1,0 +1,61 @@
+# Regen Keyring Backend ("test", "file", "os" or "memory")
+# Example: KEYRING_BACKEND="test"
+# You can reimport your wallet with desired backend-type
+# (`regen keys add RegenWalletName --recover --keyring-backend test`)
+KEYRING_BACKEND="test"
+
+# Password
+# Required if keyring-backend is "file" or "os"
+PASSWD=""
+
+# Regen Wallet Name (`regen keys list`)
+# Example: DELEGATOR_NAME="EZStaking"
+DELEGATOR_NAME=""
+
+# Regen Wallet Address (`regen keys show RegenWalletName -a`)
+# Example: DELEGATOR="regen1pcvqrt67ujyxsrh0wjsaess8x6ak5p4he6zzxh"
+DELEGATOR=""
+
+# Regen Validator Address
+# Example: VALIDATOR="regenvaloper1pcvqrt67ujyxsrh0wjsaess8x6ak5p4h9al87x"
+VALIDATOR=""
+
+# Current Regen Chain ID
+CHAIN_ID="regen-1"
+
+##########################################################
+# In case you customized the Regen Node configuration, #
+# you will want to edit this below parameters.           #
+##########################################################
+
+# The IP of your Regen Node
+NODE_IP="127.0.0.1"
+
+# The port of your Regen Node
+NODE_PORT="26657"
+
+# The home of your Regen Node
+NODE_HOME="/home/regen/.regen"
+
+# The path to your Regen binary
+# To get the full path to your regen binary you can use `whereis regen` and replace the below value by.
+BINARY="/home/regen/go/bin/regen"
+
+# Depending on Cosmos SDK version
+# - ACCOUNT     $binary query account
+# - BANK        $binary query bank balances
+BALANCES_FROM="BANK"
+
+####################
+# MODIFY FOR TESTS #
+####################
+
+DENOM="uregen"
+GAS_PRICES="--gas auto --gas-prices="0.001${DENOM}" --gas-adjustment 1.2"
+
+##################
+# DO NOT MODIFY! #
+##################
+
+SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT}"
+DETAILS="${SDETAILS} --keyring-backend ${KEYRING_BACKEND}"

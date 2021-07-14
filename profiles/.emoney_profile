@@ -1,0 +1,61 @@
+# e-Money Keyring Backend ("test", "file", "os" or "memory")
+# Example: KEYRING_BACKEND="test"
+# You can reimport your wallet with desired backend-type
+# (`emcli keys add e-MoneyWalletName --recover --keyring-backend test`)
+KEYRING_BACKEND="test"
+
+# Password
+# Required if keyring-backend is "file" or "os"
+PASSWD=""
+
+# e-Money Wallet Name (`emcli keys list`)
+# Example: DELEGATOR_NAME="EZStaking"
+DELEGATOR_NAME=""
+
+# e-Money Wallet Address (`emcli keys show eMoneyWalletName -a`)
+# Example: DELEGATOR="emoney1pwpy0ul4v6ujpucetj3rh2f8dt4x7vuwrc322k"
+DELEGATOR=""
+
+# e-Money Validator Address
+# Example: VALIDATOR="emoneyvaloper1pwpy0ul4v6ujpucetj3rh2f8dt4x7vuwych75m"
+VALIDATOR=""
+
+# Current e-Money Chain ID
+CHAIN_ID="emoney-2"
+
+##########################################################
+# In case you customized the e-Money Node configuration, #
+# you will want to edit this below parameters.           #
+##########################################################
+
+# The IP of your e-Money Node
+NODE_IP="127.0.0.1"
+
+# The port of your e-Money Node
+NODE_PORT="26657"
+
+# The home of your e-Money Node
+NODE_HOME="/home/emoney/.emd"
+
+# The path to your e-Money binary
+# To get the full path to your e-Money binary you can use `whereis emcli` and replace the below value by.
+BINARY="/home/emoney/go/bin/emcli"
+
+# Depending on Cosmos SDK version
+# - ACCOUNT     $binary query account
+# - BANK        $binary query bank balances
+BALANCES_FROM="ACCOUNT"
+
+####################
+# MODIFY FOR TESTS #
+####################
+
+DENOM="ungm"
+GAS_PRICES="--fees 200000${DENOM}"
+
+##################
+# DO NOT MODIFY! #
+##################
+
+SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT}"
+DETAILS="${SDETAILS} --keyring-backend ${KEYRING_BACKEND}"

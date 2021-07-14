@@ -1,0 +1,61 @@
+# IRIS Keyring Backend ("test", "file", "os" or "memory")
+# Example: KEYRING_BACKEND="test"
+# You can reimport your wallet with desired backend-type
+# (`iris keys add IRISWalletName --recover --keyring-backend test`)
+KEYRING_BACKEND="test"
+
+# Password
+# Required if keyring-backend is "file" or "os"
+PASSWD=""
+
+# IRIS Wallet Name (`iris keys list`)
+# Example: DELEGATOR_NAME="EZStaking"
+DELEGATOR_NAME=""
+
+# IRIS Wallet Address (`iris keys show IRISWalletName -a`)
+# Example: DELEGATOR="iaa1j8er22jnq767x5pfq6cda8duw4y4a09j3ws7ek"
+DELEGATOR=""
+
+# IRIS Validator Address
+# Example: VALIDATOR="iva1j8er22jnq767x5pfq6cda8duw4y4a09jyl63y3"
+VALIDATOR=""
+
+# Current IRIS Chain ID
+CHAIN_ID="irishub-1"
+
+##########################################################
+# In case you customized the IRIS Node configuration, #
+# you will want to edit this below parameters.           #
+##########################################################
+
+# The IP of your IRIS Node
+NODE_IP="127.0.0.1"
+
+# The port of your IRIS Node
+NODE_PORT="26657"
+
+# The home of your IRIS Node
+NODE_HOME="/home/iris/.iris"
+
+# The path to your IRIS binary
+# To get the full path to your IRIS binary you can use `whereis iris` and replace the below value by.
+BINARY="/home/iris/go/bin/iris"
+
+# Depending on Cosmos SDK version
+# - ACCOUNT     $binary query account
+# - BANK        $binary query bank balances
+BALANCES_FROM="BANK"
+
+####################
+# MODIFY FOR TESTS #
+####################
+
+DENOM="uosmo"
+GAS_PRICES=""
+
+##################
+# DO NOT MODIFY! #
+##################
+
+SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT}"
+DETAILS="${SDETAILS} --keyring-backend ${KEYRING_BACKEND}"

@@ -1,0 +1,61 @@
+# Ki Keyring Backend ("test", "file", "os" or "memory")
+# Example: KEYRING_BACKEND="test"
+# You can reimport your wallet with desired backend-type
+# (`kicli keys add KiWalletName --recover --keyring-backend test`)
+KEYRING_BACKEND="test"
+
+# Password
+# Required if keyring-backend is "file" or "os"
+PASSWD=""
+
+# Ki Wallet Name (`kicli keys list`)
+# Example: DELEGATOR_NAME="EZStaking"
+DELEGATOR_NAME=""
+
+# Ki Wallet Address (`kicli keys show KiWalletName -a`)
+# Example: DELEGATOR="ki13lq4tcprfthcytx8xa8nrle7scuvm6xjaa6eh4"
+DELEGATOR=""
+
+# Ki Validator Address
+# Example: VALIDATOR="kivaloper13lq4tcprfthcytx8xa8nrle7scuvm6xjf65y5t"
+VALIDATOR=""
+
+# Current Ki Chain ID
+CHAIN_ID="kichain-1"
+
+##########################################################
+# In case you customized the Ki Node configuration, #
+# you will want to edit this below parameters.           #
+##########################################################
+
+# The IP of your Ki Node
+NODE_IP="127.0.0.1"
+
+# The port of your Ki Node
+NODE_PORT="26657"
+
+# The home of your Ki Node
+NODE_HOME="/home/kichain/.kichain/kicli"
+
+# The path to your Ki binary
+# To get the full path to your ki binary you can use `whereis kicli` and replace the below value by.
+BINARY="/home/kichain/go/bin/kicli"
+
+# Depending on Cosmos SDK version
+# - ACCOUNT     $binary query account
+# - BANK        $binary query bank balances
+BALANCES_FROM="ACCOUNT"
+
+####################
+# MODIFY FOR TESTS #
+####################
+
+DENOM="uxki"
+GAS_PRICES="--gas-prices 0.025${DENOM}"
+
+##################
+# DO NOT MODIFY! #
+##################
+
+SDETAILS="--node tcp://${NODE_IP}:${NODE_PORT} --home ${NODE_HOME}"
+DETAILS="${SDETAILS} --chain-id ${CHAIN_ID} --keyring-backend ${KEYRING_BACKEND}"

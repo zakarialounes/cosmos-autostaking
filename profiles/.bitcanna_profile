@@ -1,0 +1,61 @@
+# BitCanna Keyring Backend ("test", "file", "os" or "memory")
+# Example: KEYRING_BACKEND="test"
+# You can reimport your wallet with desired backend-type
+# (`bcnad keys add BitCannaWalletName --recover --keyring-backend test`)
+KEYRING_BACKEND="test"
+
+# Password
+# Required if keyring-backend is "file" or "os"
+PASSWD=""
+
+# BitCanna Wallet Name (`bcnad keys list`)
+# Example: DELEGATOR_NAME="EZStaking"
+DELEGATOR_NAME=""
+
+# BitCanna Wallet Address (`bcnad keys show BitCannaWalletName -a`)
+# Example: DELEGATOR="bcna1unndw9wql5p40yf7qssgd0y6zdp5zmzxyddgq8"
+DELEGATOR=""
+
+# BitCanna Validator Address
+# Example: VALIDATOR="bcnavaloper1unndw9wql5p40yf7qssgd0y6zdp5zmzxasug6n"
+VALIDATOR=""
+
+# Current BitCanna Chain ID
+CHAIN_ID="bitcanna-testnet-5"
+
+##########################################################
+# In case you customized the BitCanna Node configuration, #
+# you will want to edit this below parameters.           #
+##########################################################
+
+# The IP of your BitCanna Node
+NODE_IP="127.0.0.1"
+
+# The port of your BitCanna Node
+NODE_PORT="26657"
+
+# The home of your BitCanna Node
+NODE_HOME="/home/bitcanna/.bcnad"
+
+# The path to your BitCanna binary
+# To get the full path to your bitCanna binary you can use `whereis bcnad` and replace the below value by.
+BINARY="/home/bitcanna/go/bin/bcnad"
+
+# Depending on Cosmos SDK version
+# - ACCOUNT     $binary query account
+# - BANK        $binary query bank balances
+BALANCES_FROM="BANK"
+
+####################
+# MODIFY FOR TESTS #
+####################
+
+DENOM="ubcna"
+GAS_PRICES="--gas auto --gas-adjustment 1.4 --gas-prices 0.01${DENOM}"
+
+##################
+# DO NOT MODIFY! #
+##################
+
+SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT}"
+DETAILS="${SDETAILS} --keyring-backend ${KEYRING_BACKEND}"

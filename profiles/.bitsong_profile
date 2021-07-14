@@ -1,0 +1,61 @@
+# BitSong Keyring Backend ("test", "file", "os" or "memory")
+# Example: KEYRING_BACKEND="test"
+# You can reimport your wallet with desired backend-type
+# (`bitsongcli keys add BitSongWalletName --recover --keyring-backend test`)
+KEYRING_BACKEND="test"
+
+# Password
+# Required if keyring-backend is "file" or "os"
+PASSWD=""
+
+# BitSong Wallet Name (`bitsongcli keys list`)
+# Example: DELEGATOR_NAME="EZStaking"
+DELEGATOR_NAME=""
+
+# BitSong Wallet Address (`bitsongcli keys show BitSongWalletName -a`)
+# Example: DELEGATOR="bitsong18xfqngs09n7a86lesrh4q5atjx37a3qc47tf8n"
+DELEGATOR=""
+
+# BitSong Validator Address
+# Example: VALIDATOR="bitsongvaloper18xfqngs09n7a86lesrh4q5atjx37a3qc56hqhw"
+VALIDATOR=""
+
+# Current BitSong Chain ID
+CHAIN_ID="bitSong-1"
+
+##########################################################
+# In case you customized the BitSong Node configuration, #
+# you will want to edit this below parameters.           #
+##########################################################
+
+# The IP of your BitSong Node
+NODE_IP="127.0.0.1"
+
+# The port of your BitSong Node
+NODE_PORT="26657"
+
+# The home of your BitSong Node
+NODE_HOME="/home/bitsong/.bitsongcli"
+
+# The path to your BitSong binary
+# To get the full path to your bitSong binary you can use `whereis bitsongcli` and replace the below value by.
+BINARY="/home/bitSong/go/bin/bitsongcli"
+
+# Depending on Cosmos SDK version
+# - ACCOUNT     $binary query account
+# - BANK        $binary query bank balances
+BALANCES_FROM="ACCOUNT"
+
+####################
+# MODIFY FOR TESTS #
+####################
+
+DENOM="ubtsg"
+GAS_PRICES="--fees 5000${DENOM}"
+
+##################
+# DO NOT MODIFY! #
+##################
+
+SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT}"
+DETAILS="${SDETAILS} --keyring-backend ${KEYRING_BACKEND}"
