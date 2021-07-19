@@ -41,11 +41,6 @@ NODE_HOME="/home/juno/.juno"
 # To get the full path to your junod binary you can use `whereis junod` and replace the below value by.
 BINARY="/home/juno/go/bin/junod"
 
-# Depending on Cosmos SDK version
-# - ACCOUNT     $binary query account
-# - BANK        $binary query bank balances
-BALANCES_FROM="BANK"
-
 ####################
 # MODIFY FOR TESTS #
 ####################
@@ -56,6 +51,11 @@ GAS_PRICES="--fees 200000${DENOM}"
 ##################
 # DO NOT MODIFY! #
 ##################
+
+# Depending on Cosmos SDK version
+# - ACCOUNT     $binary query account
+# - BANK        $binary query bank balances
+BALANCES_FROM="BANK"
 
 SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT}"
 DETAILS="${SDETAILS} --keyring-backend ${KEYRING_BACKEND}"

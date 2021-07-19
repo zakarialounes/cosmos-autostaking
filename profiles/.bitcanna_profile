@@ -41,11 +41,6 @@ NODE_HOME="/home/bitcanna/.bcnad"
 # To get the full path to your bitCanna binary you can use `whereis bcnad` and replace the below value by.
 BINARY="/home/bitcanna/go/bin/bcnad"
 
-# Depending on Cosmos SDK version
-# - ACCOUNT     $binary query account
-# - BANK        $binary query bank balances
-BALANCES_FROM="BANK"
-
 ####################
 # MODIFY FOR TESTS #
 ####################
@@ -56,6 +51,11 @@ GAS_PRICES="--gas auto --gas-adjustment 1.4 --gas-prices 0.01${DENOM}"
 ##################
 # DO NOT MODIFY! #
 ##################
+
+# Depending on Cosmos SDK version
+# - ACCOUNT     $binary query account
+# - BANK        $binary query bank balances
+BALANCES_FROM="BANK"
 
 SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT}"
 DETAILS="${SDETAILS} --keyring-backend ${KEYRING_BACKEND}"

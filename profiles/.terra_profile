@@ -41,11 +41,6 @@ NODE_HOME="/home/terra/.terrad"
 # To get the full path to your terra binary you can use `whereis terracli` and replace the below value by.
 BINARY="/home/terra/go/bin/terracli"
 
-# Depending on Cosmos SDK version
-# - ACCOUNT     $binary query account
-# - BANK        $binary query bank balances
-BALANCES_FROM="ACCOUNT"
-
 ####################
 # MODIFY FOR TESTS #
 ####################
@@ -53,14 +48,19 @@ BALANCES_FROM="ACCOUNT"
 DENOM="uluna"
 GAS_PRICES="--fees 3122${DENOM} --gas auto"
 
+##################
+# DO NOT MODIFY! #
+##################
+
+# Depending on Cosmos SDK version
+# - ACCOUNT     $binary query account
+# - BANK        $binary query bank balances
+BALANCES_FROM="ACCOUNT"
+
 # Depending on Cosmos SDK version
 # Required if keyring-backend is "file" or "os"
 # Example: TX_PASSWD_CONFIRMATIONS="2"
 TX_PASSWD_CONFIRMATIONS="2"
-
-##################
-# DO NOT MODIFY! #
-##################
 
 SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT}"
 DETAILS="${SDETAILS} --keyring-backend ${KEYRING_BACKEND}"

@@ -47,12 +47,12 @@ BALANCES_FROM="ACCOUNT"
 DENOM="uxki"
 GAS_PRICES="--gas-prices 0.025${DENOM}"
 
-# Ki prompt phrase is different than usual
-TX_PASSWD_PRHASE="Password to sign with '${DELEGATOR_NAME}':"
-
 ##################
 # DO NOT MODIFY! #
 ##################
+
+# Ki prompt phrase is different than usual
+TX_PASSWD_PRHASE="Password to sign with '${DELEGATOR_NAME}':"
 
 SDETAILS="--node tcp://${NODE_IP}:${NODE_PORT} --home ${NODE_HOME}"
 DETAILS="${SDETAILS} --chain-id ${CHAIN_ID}"

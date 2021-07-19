@@ -53,14 +53,14 @@ BALANCES_FROM="ACCOUNT"
 DENOM="ubtsg"
 GAS_PRICES="--fees 5000${DENOM}"
 
+##################
+# DO NOT MODIFY! #
+##################
+
 # Depending on Cosmos SDK version
 # Required if keyring-backend is "file" or "os"
 # Example: TX_PASSWD_CONFIRMATIONS="2"
 TX_PASSWD_CONFIRMATIONS="2"
-
-##################
-# DO NOT MODIFY! #
-##################
 
 SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT}"
 DETAILS="${SDETAILS} --keyring-backend ${KEYRING_BACKEND}"

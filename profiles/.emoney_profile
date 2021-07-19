@@ -41,11 +41,6 @@ NODE_HOME="/home/emoney/.emd"
 # To get the full path to your e-Money binary you can use `whereis emcli` and replace the below value by.
 BINARY="/home/emoney/go/bin/emcli"
 
-# Depending on Cosmos SDK version
-# - ACCOUNT     $binary query account
-# - BANK        $binary query bank balances
-BALANCES_FROM="ACCOUNT"
-
 ####################
 # MODIFY FOR TESTS #
 ####################
@@ -56,6 +51,11 @@ GAS_PRICES="--fees 200000${DENOM}"
 ##################
 # DO NOT MODIFY! #
 ##################
+
+# Depending on Cosmos SDK version
+# - ACCOUNT     $binary query account
+# - BANK        $binary query bank balances
+BALANCES_FROM="ACCOUNT"
 
 SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT}"
 DETAILS="${SDETAILS} --keyring-backend ${KEYRING_BACKEND}"
