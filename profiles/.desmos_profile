@@ -45,6 +45,11 @@ BINARY="/home/desmos/go/bin/desmos"
 # MODIFY FOR TESTS #
 ####################
 
+# Time to sleep in sec between two delegations
+# Example: SLEEPING_TIME=$((5*60))
+# Example: SLEEPING_TIME="30"
+SLEEPING_TIME=$((5*60))
+
 DENOM="udaric"
 GAS_PRICES="--gas 200000 --gas-prices 0.001${DENOM}"
 

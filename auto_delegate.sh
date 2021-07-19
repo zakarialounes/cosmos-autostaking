@@ -39,6 +39,10 @@ if [[ -z "TX_PASSWD_PRHASE" ]]; then
     TX_PASSWD_PRHASE="Enter keyring passphrase:"
 fi
 
+if [[ -z "SLEEPING_TIME" ]]; then
+    SLEEPING_TIME=$((5*60))
+fi
+
 echo "Last running: $(date)" > "${LOG_PATH}"
 echo "Log: ${LOG_PATH}"
 
@@ -50,6 +54,6 @@ do
         ${SCRIPT_DIR}/delegate.exp "${PROFILE_PATH}" "${PASSWD}" "${TX_PASSWD_CONFIRMATIONS}" "${TX_PASSWD_PRHASE}" >> "${LOG_PATH}" 2>&1
     fi
 
-    echo "------ SLEEP 30s ------" >> "${LOG_PATH}"
-    sleep 30
+    echo "------ SLEEP ${SLEEPING_TIME}s ------" >> "${LOG_PATH}"
+    sleep ${SLEEPING_TIME}
 done
