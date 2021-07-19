@@ -10,7 +10,7 @@ while getopts ":p:" option; do
         p)
             p=${OPTARG}
 
-            if [[ ! -f "p" ]]; then
+            if [[ ! -f "$p" ]]; then
                 usage
             fi
             ;;
