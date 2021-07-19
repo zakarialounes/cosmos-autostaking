@@ -1,7 +1,7 @@
 # Stargaze Keyring Backend ("test", "file", "os" or "memory")
 # Example: KEYRING_BACKEND="test"
 # You can reimport your wallet with desired backend-type
-# (`stars keys add StarsWalletName --recover --keyring-backend test`)
+# (`starsd keys add StarsWalletName --recover --keyring-backend test`)
 KEYRING_BACKEND="test"
 
 # Password

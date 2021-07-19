@@ -35,11 +35,11 @@ NODE_IP="127.0.0.1"
 NODE_PORT="26657"
 
 # The home of your Terra Node
-NODE_HOME="/home/terra/.terrad"
+NODE_HOME="$HOME/.terrad"
 
 # The path to your Terra binary
 # To get the full path to your terra binary you can use `whereis terracli` and replace the below value by.
-BINARY="/home/terra/go/bin/terracli"
+BINARY="$HOME/go/bin/terracli"
 
 ####################
 # MODIFY FOR TESTS #

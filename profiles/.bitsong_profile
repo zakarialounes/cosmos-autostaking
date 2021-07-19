@@ -35,11 +35,11 @@ NODE_IP="127.0.0.1"
 NODE_PORT="26657"
 
 # The home of your BitSong Node
-NODE_HOME="/home/bitsong/.bitsongcli"
+NODE_HOME="$HOME/.bitsongcli"
 
 # The path to your BitSong binary
 # To get the full path to your bitSong binary you can use `whereis bitsongcli` and replace the below value by.
-BINARY="/home/bitsong/go/bin/bitsongcli"
+BINARY="$HOME/go/bin/bitsongcli"
 
 # Depending on Cosmos SDK version
 # - ACCOUNT     $binary query account

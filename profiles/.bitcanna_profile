@@ -35,11 +35,11 @@ NODE_IP="127.0.0.1"
 NODE_PORT="26657"
 
 # The home of your BitCanna Node
-NODE_HOME="/home/bitcanna/.bcnad"
+NODE_HOME="$HOME/.bcnad"
 
 # The path to your BitCanna binary
 # To get the full path to your bitCanna binary you can use `whereis bcnad` and replace the below value by.
-BINARY="/home/bitcanna/go/bin/bcnad"
+BINARY="$HOME/go/bin/bcnad"
 
 ####################
 # MODIFY FOR TESTS #

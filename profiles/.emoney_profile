@@ -35,11 +35,11 @@ NODE_IP="127.0.0.1"
 NODE_PORT="26657"
 
 # The home of your e-Money Node
-NODE_HOME="/home/emoney/.emd"
+NODE_HOME="$HOME/.emd"
 
 # The path to your e-Money binary
 # To get the full path to your e-Money binary you can use `whereis emcli` and replace the below value by.
-BINARY="/home/emoney/go/bin/emcli"
+BINARY="$HOME/go/bin/emcli"
 
 ####################
 # MODIFY FOR TESTS #

@@ -35,11 +35,11 @@ NODE_IP="127.0.0.1"
 NODE_PORT="26657"
 
 # The home of your Regen Node
-NODE_HOME="/home/regen/.regen"
+NODE_HOME="$HOME/.regen"
 
 # The path to your Regen binary
 # To get the full path to your regen binary you can use `whereis regen` and replace the below value by.
-BINARY="/home/regen/go/bin/regen"
+BINARY="$HOME/go/bin/regen"
 
 ####################
 # MODIFY FOR TESTS #
