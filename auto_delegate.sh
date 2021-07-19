@@ -35,11 +35,11 @@ if [[ -z "$TX_PASSWD_CONFIRMATIONS" ]]; then
     TX_PASSWD_CONFIRMATIONS=1
 fi
 
-if [[ -z "TX_PASSWD_PRHASE" ]]; then
+if [[ -z "$TX_PASSWD_PRHASE" ]]; then
     TX_PASSWD_PRHASE="Enter keyring passphrase:"
 fi
 
-if [[ -z "SLEEPING_TIME" ]]; then
+if [[ -z "$SLEEPING_TIME" ]]; then
     SLEEPING_TIME=$((5*60))
 fi
 
