@@ -13,11 +13,11 @@ PASSWD=""
 DELEGATOR_NAME=""
 
 # Stargaze Wallet Address (`starsd keys show StarsWalletName -a`)
-# Example: DELEGATOR="stars18wgy6hy6yv3fvevl5pyfn7cvzx3t5use43xlgs"
+# Example: DELEGATOR="stars19pqsvs2cunx3g8zka75rc962ndffu65xtwm0ja"
 DELEGATOR=""
 
 # Stargaze Validator Address
-# Example: VALIDATOR="starsvaloper18wgy6hy6yv3fvevl5pyfn7cvzx3t5use2vssnf"
+# Example: VALIDATOR="starsvaloper19pqsvs2cunx3g8zka75rc962ndffu65xqs0mf9"
 VALIDATOR=""
 
 # Current Stargaze Chain ID
@@ -29,7 +29,7 @@ CHAIN_ID="cygnusx-1"
 ###########################################################
 
 # The IP of your Stargaze Node
-NODE_IP="127.0.0.1"
+NODE_IP="0.0.0.0"
 
 # The port of your Stargaze Node
 NODE_PORT="26657"
@@ -38,7 +38,7 @@ NODE_PORT="26657"
 NODE_HOME="$HOME/.starsd"
 
 # The path to your Stargaze binary
-# To get the full path to your starsd binary you can use `whereis starsd` and replace the below value by.
+# To get the full path to your stargaze binary you can use `whereis starsd` and replace the below value by.
 BINARY="$HOME/go/bin/starsd"
 
 ####################
@@ -51,7 +51,7 @@ BINARY="$HOME/go/bin/starsd"
 SLEEPING_TIME=$((5*60))
 
 DENOM="ustarx"
-GAS_PRICES="--fees 200000${DENOM}"
+GAS_PRICES=""
 
 ##################
 # DO NOT MODIFY! #

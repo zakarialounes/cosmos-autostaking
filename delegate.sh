@@ -10,28 +10,28 @@ if [[ -z "$TX_PASSWD_PRHASE" ]]; then
     TX_PASSWD_PRHASE="Enter keyring passphrase:"
 fi
 
-getBalancesFromAccount() {
+getDelegateBalanceFromAccount() {
     coins=$(${BINARY} query account ${DELEGATOR} -o json ${SDETAILS} | jq '.value.coins | to_entries')
     position=$(echo ${coins} | jq -r ".[] | select(.value.denom == \"${DENOM}\") | .key")
     amount=$(echo ${coins} | jq -r ".[${position}].value.amount")
     echo -n ${amount}
 }
-getBalancesFromBank() {
+getDelegateBalanceFromBank() {
     coins=$(${BINARY} query bank balances ${DELEGATOR} -o json ${SDETAILS} | jq '.balances | to_entries')
     position=$(echo ${coins} | jq -r ".[] | select(.value.denom == \"${DENOM}\") | .key")
     amount=$(echo ${coins} | jq -r ".[${position}].value.amount")
     echo -n ${amount}
 }
-getBalances() {
+getDelegateBalance() {
     amount=0
     if [[ "$BALANCES_FROM" == "BANK" ]]; then
-        amount=$(getBalancesFromBank)
+        amount=$(getDelegateBalanceFromBank)
     elif [[ "$BALANCES_FROM" == "ACCOUNT" ]]; then
-        amount=$(getBalancesFromAccount)
+        amount=$(getDelegateBalanceFromAccount)
     fi
     echo -n ${amount}
 }
-getDelegateAmount () {
+getFinalDelegateBalance () {
     amountFinal=$(expr ${1} - 100000)
     echo -n ${amountFinal}
 }
@@ -41,8 +41,8 @@ withdrawRewardsAction() {
     ${BINARY} tx distribution withdraw-rewards ${VALIDATOR} --from ${DELEGATOR_NAME} --commission ${GAS_PRICES} ${DETAILS} -y
 }
 delegateAction() {
-    balance=$(getBalances)
-    amountFinal=$(getDelegateAmount ${balance})
+    balance=$(getDelegateBalance)
+    amountFinal=$(getFinalDelegateBalance ${balance})
     echo "------ DELEGATE ------"
     echo "Balance: ${balance}"
     echo "Amount to delegate: ${amountFinal}"
