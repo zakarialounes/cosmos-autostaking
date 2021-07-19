@@ -1,7 +1,7 @@
 #!/bin/bash
 
 usage() {
-    echo "Usage: $0 [-p <string>]" 1>&2
+    echo "Usage: $0 -p [file]" 1>&2
     exit 1
 }
 
@@ -9,6 +9,10 @@ while getopts ":p:" option; do
     case "${option}" in
         p)
             p=${OPTARG}
+
+            if [[ ! -f "p" ]]; then
+                usage
+            fi
             ;;
         *)
             usage
