@@ -29,6 +29,7 @@ nano $HOME/cosmos-autostaking/profiles/.juno_profile
 nano $HOME/cosmos-autostaking/profiles/.kichain_profile
 nano $HOME/cosmos-autostaking/profiles/.osmosis_profile
 nano $HOME/cosmos-autostaking/profiles/.regen_profile
+nano $HOME/cosmos-autostaking/profiles/.stargaze_profile
 nano $HOME/cosmos-autostaking/profiles/.terra_profile
 ```
 
