@@ -10,6 +10,10 @@ if [[ -z "$TX_PASSWD_PRHASE" ]]; then
     TX_PASSWD_PRHASE="Enter keyring passphrase:"
 fi
 
+if [[ -z "$AMOUNT_TO_KEEP_AVAILABLE" ]]; then
+    AMOUNT_TO_KEEP_AVAILABLE=100000
+fi
+
 getDelegateBalanceFromAccount() {
     coins=$(${BINARY} query account ${DELEGATOR} -o json ${SDETAILS} | jq '.value.coins | to_entries')
     position=$(echo ${coins} | jq -r ".[] | select(.value.denom == \"${DENOM}\") | .key")
@@ -32,7 +36,7 @@ getDelegateBalance() {
     echo -n ${amount}
 }
 getFinalDelegateBalance () {
-    amountFinal=$(expr ${1} - 100000)
+    amountFinal=$(expr ${1} - ${AMOUNT_TO_KEEP_AVAILABLE})
     echo -n ${amountFinal}
 }
 
