@@ -57,13 +57,14 @@ tail -f $HOME/cosmos-autostaking/auto_delegate.log
 
 ```
 sudo tee /etc/systemd/system/cosmos-autostaking.service <<EOF
+[Unit]
 Description=Cosmos Auto Staking
 After=network-online.target
 
 [Service]
 User=$USER
-WorkingDirectory=/home/$USER/cosmos-autostaking
-ExecStart=/home/$USER/cosmos-autostaking/auto_delegate.sh -p /home/$USER/cosmos-autostaking/profiles/.desmos_profile
+WorkingDirectory=$HOME/cosmos-autostaking
+ExecStart=$HOME/cosmos-autostaking/auto_delegate.sh -p $HOME/cosmos-autostaking/profiles/.desmos_profile
 
 [Install]
 WantedBy=multi-user.target

@@ -62,5 +62,5 @@ GAS_PRICES="--gas auto --gas-prices="0.001${DENOM}" --gas-adjustment 1.2"
 # - BANK        $binary query bank balances
 BALANCES_FROM="BANK"
 
-SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT}"
+SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT} --home ${NODE_HOME}"
 DETAILS="${SDETAILS} --keyring-backend ${KEYRING_BACKEND}"

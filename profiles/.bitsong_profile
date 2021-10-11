@@ -67,5 +67,5 @@ GAS_PRICES="--fees 5000${DENOM}"
 # Example: TX_PASSWD_CONFIRMATIONS="2"
 TX_PASSWD_CONFIRMATIONS="2"
 
-SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT}"
+SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT} --home ${NODE_HOME}"
 DETAILS="${SDETAILS} --keyring-backend ${KEYRING_BACKEND}"

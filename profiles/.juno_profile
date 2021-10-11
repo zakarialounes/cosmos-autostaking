@@ -62,5 +62,5 @@ GAS_PRICES="--fees 200000${DENOM}"
 # - BANK        $binary query bank balances
 BALANCES_FROM="BANK"
 
-SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT}"
+SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT} --home ${NODE_HOME}"
 DETAILS="${SDETAILS} --keyring-backend ${KEYRING_BACKEND}"

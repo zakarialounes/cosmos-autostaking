@@ -62,5 +62,5 @@ SLEEPING_TIME=$((5*60))
 # - BANK        $binary query bank balances
 BALANCES_FROM="ACCOUNT"
 
-SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT}"
+SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT} --home ${NODE_HOME}"
 DETAILS="${SDETAILS} --keyring-backend ${KEYRING_BACKEND}"
