@@ -1,9 +1,13 @@
 # Cosmos Auto Staking
 
+> **_⚠ WARNING:_**  Using this script in a mainnet environment is not recommended.
+
+> **_⚠ WARNING:_**  You are strongly advised to configure the service with the root user, so other users will not have access to the profile details and therefore the password (if you have decided to use the script with password set in profile).
+
 ### Install dependencies
 
 ```bash
-sudo apt install expect -y
+sudo apt install screen expect -y
 ```
 
 ### Clone this repository
