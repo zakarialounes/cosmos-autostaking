@@ -84,3 +84,8 @@ sudo systemctl enable --now cosmos-autostaking
 ```bash
 sudo systemctl stop cosmos-autostaking
 ```
+
+#### Manual Delegation
+```bash
+$HOME/cosmos-autostaking/delegate_manually.sh -p $HOME/cosmos-autostaking/profiles/.desmos_profile
+```
