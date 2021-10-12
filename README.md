@@ -28,6 +28,7 @@ nano $HOME/cosmos-autostaking/profiles/.bitcanna_profile
 nano $HOME/cosmos-autostaking/profiles/.bitsong_profile
 nano $HOME/cosmos-autostaking/profiles/.desmos_profile
 nano $HOME/cosmos-autostaking/profiles/.emoney_profile
+nano $HOME/cosmos-autostaking/profiles/.evmos_profile
 nano $HOME/cosmos-autostaking/profiles/.irisnet_profile
 nano $HOME/cosmos-autostaking/profiles/.juno_profile
 nano $HOME/cosmos-autostaking/profiles/.kichain_profile
