@@ -13,12 +13,12 @@ PASSWD=""
 DELEGATOR_NAME=""
 
 # Archway Wallet Address (`desmos keys show ArchwayWalletName -a`)
-# Example: DELEGATOR="desmos164kcy3s0pqfall3r837n82l24alc6l36ky56ld"
-DELEGATOR="archway1k9vrzl02at9qh79mr6uaevewetddhq5f3gv605"
+# Example: DELEGATOR="archway1k9vrzl02at9qh79mr6uaevewetddhq5f3gv605"
+DELEGATOR=""
 
 # Archway Validator Address
-# Example: VALIDATOR="desmosvaloper164kcy3s0pqfall3r837n82l24alc6l36gfuw4l"
-VALIDATOR="archwayvaloper1k9vrzl02at9qh79mr6uaevewetddhq5f3v9cza"
+# Example: VALIDATOR="archway1k9vrzl02at9qh79mr6uaevewetddhq5f3gv605"
+VALIDATOR=""
 
 # Current Archway Chain ID
 CHAIN_ID="torii-1"
@@ -38,7 +38,7 @@ NODE_PORT="26657"
 NODE_HOME="$HOME/.archway"
 
 # The path to your Archway binary
-# To get the full path to your desmos binary you can use `whereis desmos` and replace the below value by.
+# To get the full path to your desmos binary you can use `whereis archwayd` and replace the below value by.
 BINARY="$HOME/go/bin/archwayd"
 
 ####################
