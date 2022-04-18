@@ -8,11 +8,11 @@ KEYRING_BACKEND="test"
 # Required if keyring-backend is "file" or "os"
 PASSWD=""
 
-# Archway Wallet Name (`desmos keys list`)
-# Example: DELEGATOR_NAME="EZStaking"
+# Archway Wallet Name (`archwayd keys list`)
+# Example: DELEGATOR_NAME="derrenen"
 DELEGATOR_NAME=""
 
-# Archway Wallet Address (`desmos keys show ArchwayWalletName -a`)
+# Archway Wallet Address (`archwayd keys show ArchwayWalletName -a`)
 # Example: DELEGATOR="archway1k9vrzl02at9qh79mr6uaevewetddhq5f3gv605"
 DELEGATOR=""
 
