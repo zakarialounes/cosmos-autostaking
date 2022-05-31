@@ -55,7 +55,7 @@ getDelegateBalance() {
     echo -n ${amount}
 }
 getFinalDelegateBalance () {
-    amountFinal=$(expr ${1} - ${AMOUNT_TO_KEEP_AVAILABLE})
+    amountFinal=$(bc <<< "${1} - ${AMOUNT_TO_KEEP_AVAILABLE}")
     echo -n ${amountFinal}
 }
 
