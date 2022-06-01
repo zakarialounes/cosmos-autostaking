@@ -50,7 +50,7 @@ delegateAction() {
     echo "------ DELEGATE ------"
     echo "Balance: ${balance}"
     echo "Amount to delegate: ${amountFinal}"
-    if [[ ${amountFinal} -gt 0 ]]; then
+    if [[ ${amountFinal} > 0 ]]; then
         ${BINARY} tx staking delegate ${VALIDATOR} ${amountFinal}${DENOM} --from ${DELEGATOR_NAME} ${GAS_PRICES} ${DETAILS} -y
     elif [[ "$KEYRING_BACKEND" != "test" && "$KEYRING_BACKEND" != "memory" ]]; then
         for (( i=1; i<=$TX_PASSWD_CONFIRMATIONS; i++ ))
