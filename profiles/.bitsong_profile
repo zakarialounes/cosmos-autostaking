@@ -21,7 +21,7 @@ DELEGATOR=""
 VALIDATOR=""
 
 # Current BitSong Chain ID
-CHAIN_ID="bitsong-1"
+CHAIN_ID="bitsong-2b"
 
 ##########################################################
 # In case you customized the BitSong Node configuration, #
