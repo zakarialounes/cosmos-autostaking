@@ -1,2 +1,4 @@
 profiles/*
 *.log
+tx.json
+.idea

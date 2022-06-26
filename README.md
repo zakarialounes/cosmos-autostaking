@@ -90,3 +90,15 @@ sudo systemctl stop cosmos-autostaking
 ```bash
 $HOME/cosmos-autostaking/delegate_manually.sh -p $HOME/cosmos-autostaking/profiles/.desmos_profile
 ```
+
+#### Auto Delegate using restake
+```bash
+# Grant authorization to the REStake operator
+$HOME/cosmos-autostaking/grant_restake.sh -p $HOME/cosmos-autostaking/profiles/.desmos_profile
+
+# Auto Delegate Manually
+$HOME/cosmos-autostaking/authz_delegate_manually.sh -p $HOME/cosmos-autostaking/profiles/.desmos_profile
+
+# Auto Delegate Automatically
+$HOME/cosmos-autostaking/authz_auto_delegate.sh -p $HOME/cosmos-autostaking/profiles/.desmos_profile
+```
