@@ -20,6 +20,10 @@ DELEGATOR=""
 # Example: VALIDATOR="emoneyvaloper1pwpy0ul4v6ujpucetj3rh2f8dt4x7vuwych75m"
 VALIDATOR=""
 
+# REStake Operator Address
+# Optional (only needed by authz_*.sh scripts)
+RESTAKE=""
+
 # Current e-Money Chain ID
 CHAIN_ID="emoney-2"
 

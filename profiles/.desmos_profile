@@ -20,6 +20,10 @@ DELEGATOR=""
 # Example: VALIDATOR="desmosvaloper164kcy3s0pqfall3r837n82l24alc6l36gfuw4l"
 VALIDATOR=""
 
+# REStake Operator Address
+# Optional (only needed by authz_*.sh scripts)
+RESTAKE=""
+
 # Current Desmos Chain ID
 CHAIN_ID="morpheus-apollo-2"
 

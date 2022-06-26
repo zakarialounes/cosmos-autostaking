@@ -20,6 +20,10 @@ DELEGATOR=""
 # Example: VALIDATOR="junovaloper18wgy6hy6yv3fvevl5pyfn7cvzx3t5use2vssnf"
 VALIDATOR=""
 
+# REStake Operator Address
+# Optional (only needed by authz_*.sh scripts)
+RESTAKE=""
+
 # Current Juno Chain ID
 CHAIN_ID="lucina"
 

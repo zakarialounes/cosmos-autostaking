@@ -20,6 +20,10 @@ DELEGATOR=""
 # Example: VALIDATOR="iva1j8er22jnq767x5pfq6cda8duw4y4a09jyl63y3"
 VALIDATOR=""
 
+# REStake Operator Address
+# Optional (only needed by authz_*.sh scripts)
+RESTAKE=""
+
 # Current IRIS Chain ID
 CHAIN_ID="irishub-1"
 

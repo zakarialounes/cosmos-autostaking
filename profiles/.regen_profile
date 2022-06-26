@@ -20,6 +20,10 @@ DELEGATOR=""
 # Example: VALIDATOR="regenvaloper1pcvqrt67ujyxsrh0wjsaess8x6ak5p4h9al87x"
 VALIDATOR=""
 
+# REStake Operator Address
+# Optional (only needed by authz_*.sh scripts)
+RESTAKE=""
+
 # Current Regen Chain ID
 CHAIN_ID="regen-1"
 

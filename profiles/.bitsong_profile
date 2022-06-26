@@ -20,6 +20,10 @@ DELEGATOR=""
 # Example: VALIDATOR="bitsongvaloper18xfqngs09n7a86lesrh4q5atjx37a3qc56hqhw"
 VALIDATOR=""
 
+# REStake Operator Address
+# Optional (only needed by authz_*.sh scripts)
+RESTAKE=""
+
 # Current BitSong Chain ID
 CHAIN_ID="bitsong-2b"
 

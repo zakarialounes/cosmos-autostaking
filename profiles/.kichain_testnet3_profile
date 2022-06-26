@@ -14,6 +14,10 @@ DELEGATOR=""
 # Example: VALIDATOR="tkivaloper1rj382mz86ssqcxqwf3mw2auq2uqtysg2wfvtl6"
 VALIDATOR=""
 
+# REStake Operator Address
+# Optional (only needed by authz_*.sh scripts)
+RESTAKE=""
+
 # Current Ki Chain ID
 CHAIN_ID="kichain-t-3"
 

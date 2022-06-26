@@ -20,6 +20,10 @@ DELEGATOR=""
 # Example: VALIDATOR="evmosvaloper19edzsptn6t0v7clgyt7v0xs4t6ucw5nf5un6gh"
 VALIDATOR=""
 
+# REStake Operator Address
+# Optional (only needed by authz_*.sh scripts)
+RESTAKE=""
+
 # Current Evmos Chain ID
 CHAIN_ID="evmos_9000-1"
 

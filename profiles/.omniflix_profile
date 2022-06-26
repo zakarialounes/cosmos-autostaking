@@ -20,6 +20,10 @@ DELEGATOR=""
 # Example: VALIDATOR="omniflixvaloper1jfpdu4ry2fl7h6xn8x7cc3rvr0pf25759693y9"
 VALIDATOR=""
 
+# REStake Operator Address
+# Optional (only needed by authz_*.sh scripts)
+RESTAKE=""
+
 # Current OmniFlix Chain ID
 CHAIN_ID="flixnet-1"
 

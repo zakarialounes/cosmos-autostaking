@@ -20,6 +20,10 @@ DELEGATOR=""
 # Example: VALIDATOR="archway1k9vrzl02at9qh79mr6uaevewetddhq5f3gv605"
 VALIDATOR=""
 
+# REStake Operator Address
+# Optional (only needed by authz_*.sh scripts)
+RESTAKE=""
+
 # Current Archway Chain ID
 CHAIN_ID="torii-1"
 

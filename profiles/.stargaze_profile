@@ -20,6 +20,10 @@ DELEGATOR=""
 # Example: VALIDATOR="starsvaloper19pqsvs2cunx3g8zka75rc962ndffu65xqs0mf9"
 VALIDATOR=""
 
+# REStake Operator Address
+# Optional (only needed by authz_*.sh scripts)
+RESTAKE=""
+
 # Current Stargaze Chain ID
 CHAIN_ID="cygnusx-1"
 

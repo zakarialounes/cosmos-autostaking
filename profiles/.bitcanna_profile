@@ -20,6 +20,10 @@ DELEGATOR=""
 # Example: VALIDATOR="bcnavaloper1unndw9wql5p40yf7qssgd0y6zdp5zmzxasug6n"
 VALIDATOR=""
 
+# REStake Operator Address
+# Optional (only needed by authz_*.sh scripts)
+RESTAKE=""
+
 # Current BitCanna Chain ID
 CHAIN_ID="bitcanna-testnet-5"
 

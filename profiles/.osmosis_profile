@@ -20,6 +20,10 @@ DELEGATOR=""
 # Example: VALIDATOR="osmovaloper16vcwhpzd6hfsm5n0fxz9880lvkgjnpwyxqncyt"
 VALIDATOR=""
 
+# REStake Operator Address
+# Optional (only needed by authz_*.sh scripts)
+RESTAKE=""
+
 # Current Osmosis Chain ID
 CHAIN_ID="osmosis-1"
 

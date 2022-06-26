@@ -1,0 +1,12 @@
+#!/usr/bin/expect
+
+set path [lindex $argv 0]
+set password [lindex $argv 1]
+set txPasswdConfirmations [lindex $argv 2]
+set txPasswdPhrase [lindex $argv 3]
+
+spawn ./authz_delegate.sh $path
+
+expect "$txPasswdPhrase" { send "$password\r"; }
+
+interact
