@@ -12,7 +12,7 @@ sudo apt install screen expect bc -y
 
 ### Clone this repository
 ```bash
-git clone https://github.com/zlounes/cosmos-autostaking.git $HOME/cosmos-autostaking && cd $HOME/cosmos-autostaking
+git clone https://github.com/keupsonite/cosmos-autostaking.git $HOME/cosmos-autostaking && cd $HOME/cosmos-autostaking
 ```
 
 ### Configuration
