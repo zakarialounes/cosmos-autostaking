@@ -7,7 +7,7 @@
 ### Install dependencies
 
 ```bash
-sudo apt install screen expect -y
+sudo apt install screen expect bc -y
 ```
 
 ### Clone this repository
