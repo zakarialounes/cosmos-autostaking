@@ -1,0 +1,73 @@
+# Entangle Keyring Backend ("test", "file", "os" or "memory")
+# Example: KEYRING_BACKEND="test"
+# You can reimport your wallet with desired backend-type
+# (`entangled keys add EntangleWalletName --recover --keyring-backend test`)
+KEYRING_BACKEND="os"
+
+# Password
+# Required if keyring-backend is "file" or "os"
+PASSWD=""
+
+# Entangle Wallet Name (`entangled keys list`)
+# Example: DELEGATOR_NAME="EZStaking"
+DELEGATOR_NAME=""
+
+# Entangle Wallet Address (`entangled keys show EntangleWalletName -a`)
+# Example: DELEGATOR="ethm19j4pje5sljgta7t79c0xh6uduc8u7ra0l45d6j"
+DELEGATOR=""
+
+# Entangle Validator Address
+# Example: VALIDATOR="evmosvaloper19edzsptn6t0v7clgyt7v0xs4t6ucw5nf5un6gh"
+VALIDATOR=""
+
+# REStake Operator Address
+# Optional (only needed by authz_*.sh scripts)
+RESTAKE=""
+
+# Current Entangle Chain ID
+CHAIN_ID="entangle_33133-1"
+
+##########################################################
+# In case you customized the Entangle Node configuration,    #
+# you will want to edit this below parameters.           #
+##########################################################
+
+# The IP of your Entangle Node
+NODE_IP="127.0.0.1"
+
+# The port of your Entangle Node
+NODE_PORT="26657"
+
+# The home of your Entangle Node
+# Example: /root/.entangle
+NODE_HOME=""
+
+# The path to your Entangle binary
+# To get the full path to your Entangle binary you can use `whereis entangled` and replace the below value by.
+BINARY=""
+
+####################
+# MODIFY FOR TESTS #
+####################
+
+# Time to sleep in sec between two delegations
+# Example: SLEEPING_TIME=$((5*60))
+# Example: SLEEPING_TIME="30"
+SLEEPING_TIME="600"
+
+DENOM="aNGL"
+GAS_PRICES="--gas-prices=10000${DENOM} --gas-adjustment=1.5 --gas=500000"
+
+##################
+# DO NOT MODIFY! #
+##################
+
+# Depending on Cosmos SDK version
+# - ACCOUNT     $binary query account
+# - BANK        $binary query bank balances
+BALANCES_FROM="BANK"
+
+#SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT} --home ${NODE_HOME}"
+SDETAILS="--chain-id ${CHAIN_ID} --node tcp://${NODE_IP}:${NODE_PORT} --home ${NODE_HOME}"
+#DETAILS="${SDETAILS} --keyring-backend ${KEYRING_BACKEND}"
+DETAILS="${SDETAILS}"
